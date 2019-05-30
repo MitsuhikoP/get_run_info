@@ -7,21 +7,14 @@ def main():
     from argparse import ArgumentParser,FileType
     import os
     parser=ArgumentParser(description="",usage="You can see help: python3 get_run_info.py -h", epilog="")
-    parser.add_argument("dirs", nargs="+", type=str, metavar="dir", help="MiSeq 
-directory (more than 1 file(s) )")
-    parser.add_argument("--mode", type=str, choices=["list", "add", "show"], met
-avar="list|add|show", default="show", help="mode type. list, add, or show (defau
-lt=show)")
+    parser.add_argument("dirs", nargs="+", type=str, metavar="dir", help="MiSeq directory (more than 1 file(s) )")
+    parser.add_argument("--mode", type=str, choices=["list", "add", "show"], metavar="list|add|show", default="show", help="mode type. list, add, or show (default=show)")
     parser.add_argument("-O", type=str, metavar="str", help="output file name" )
     
-    parser.add_argument("-o", type=str, metavar="str",default="unknown",help="op
-erator name (default = unknown)")
-    parser.add_argument("-l", type=str, metavar="str",default="unknown",help="Li
-brary prep (default = unknown)")
-    parser.add_argument("-s", type=str, metavar="str",default="unknown",help="sa
-mple information (default = unknown)" )
-    parser.add_argument("-c", type=str, metavar="str",default="NO_COMMENT",help=
-"comment (default = NO_COMMENT)" )
+    parser.add_argument("-o", type=str, metavar="str",default="unknown",help="operator name (default = unknown)")
+    parser.add_argument("-l", type=str, metavar="str",default="unknown",help="Library prep (default = unknown)")
+    parser.add_argument("-s", type=str, metavar="str",default="unknown",help="sample information (default = unknown)" )
+    parser.add_argument("-c", type=str, metavar="str",default="NO_COMMENT",help="comment (default = NO_COMMENT)" )
     
     args = parser.parse_args()
     outs=""
